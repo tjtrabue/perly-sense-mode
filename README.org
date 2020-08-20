@@ -1,0 +1,29 @@
+#+title:    Emacs Interface for PerlySense
+#+author:   Tom Trabue
+#+email:    tom.trabue@gmail.com
+#+date:     2020:08:20
+#+property: header-args:emacs-lisp :lexical t
+#+tags:     perl perly-sense emacs
+
+* perly-sense-mode
+  =perly-sense-mode= is s minor mode for Emacs that acts as an interface for the
+  suite of Emacs tools housed in the =Devel::PerlySense= perl package on CPAN.
+
+** Installation
+   Right now the only way to install perly-sense-mode is to do so manually, but
+   this will likely change soon. I am working to get this plugin hosted on
+   MELPA.
+
+*** Manual Installation
+    Clone this repository:
+
+#+begin_src sh
+git clone git@github.com:tjtrabue/perly-sense-mode.git
+#+end_src
+
+    Once you've finished cloning the repository, add it to your =load-path= in
+    your =~/.emacs= file (or whichever initialization file you use):
+
+#+begin_src emacs-lisp :tangle yes
+(add-to-list 'load-path "/path/to/perly-sense-mode")
+#+end_src
