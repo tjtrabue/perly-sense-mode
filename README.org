@@ -41,6 +41,19 @@ git clone git@github.com:tjtrabue/perly-sense-mode.git
 (add-to-list 'load-path "/path/to/perly-sense-mode")
 #+end_src
 
+** Customization
+   It's a good idea to set these variables /before/ you load the
+   =perly-sense-mode= plugin.
+
+#+begin_src emacs-lisp :tangle yes
+;; Change the keybinding for the PerlySense prefix key:
+;; This is the most important setting.
+(setq ps/key-prefix (kbd "C-c C-o"))
+;; Set this value to t if you would like to use flymake.
+;; Not recommended since flymake is deprecated in favor of flycheck.
+(setq ps/load-flymake nil)
+#+end_src
+
 ** Starting perly-sense-mode automatically for perl-mode/cperl-mode
    Add the following hooks to your Emacs configuration file:
 

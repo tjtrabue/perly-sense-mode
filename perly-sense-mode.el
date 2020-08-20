@@ -101,18 +101,6 @@
   (make-local-variable 'ps/enable-test-coverage-visualization)
   (make-local-variable 'ps/use-prepare-shell-command)
 
-  ;; The PerlySense prefix key (unset only if needed, like for \C-o)
-  (global-unset-key (kbd "C-c C-o"))
-  (setq ps/key-prefix (kbd "C-c C-o"))
-
-  ;; ** Flymake **
-  ;; Load flymake if t
-  ;; Flymake must be installed.
-  ;; It is included in Emacs 22
-  ;;     (or http://flymake.sourceforge.net/, put flymake.el in your load-path)
-  (setq ps/load-flymake nil)
-  ;; Note: more flymake config below, after loading PerlySense
-
   (ps/load-perly-sense)
   (ps/set-faces)
   (ps/configure-flymake ps/load-flymake)
