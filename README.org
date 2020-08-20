@@ -7,8 +7,7 @@
 
 * perly-sense-mode
   =perly-sense-mode= is s minor mode for Emacs that acts as an interface for the
-  suite of Emacs tools housed in the =Devel::PerlySense= perl package on
-  CPAN.
+  suite of Emacs tools housed in the [[https://metacpan.org/pod/Devel::PerlySense][Devel::PerlySense]] perl package on CPAN.
 
 ** Prerequisites
    To use =perly-sense-mode=, you need:
@@ -21,7 +20,7 @@
    soon as it becomes available. Until then, here are some other ways of
    installing =perly-sense-mode=:
 
-*** Using straight.el
+*** Using [[https://github.com/raxod502/straight.el][straight.el]]
 
 #+begin_src emacs-lisp :tangle yes
 (straight-use-package
