@@ -17,9 +17,16 @@
      and install it for you, but this is experimental).
 
 ** Installation
-   Right now the only way to install perly-sense-mode is to do so manually, but
-   this will likely change soon. I am working to get this plugin hosted on
-   MELPA.
+   *NOTE*: This package is not yet hosted on MELPA. I will update this README as
+   soon as it becomes available. Until then, here are some other ways of
+   installing =perly-sense-mode=:
+
+*** Using straight.el
+
+#+begin_src emacs-lisp :tangle yes
+(straight-use-package
+  '(perly-sense-mode :type git :host github :repo "tjtrabue/perly-sense-mode"))
+#+end_src
 
 *** Manual Installation
     Clone this repository:
