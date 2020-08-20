@@ -7,7 +7,14 @@
 
 * perly-sense-mode
   =perly-sense-mode= is s minor mode for Emacs that acts as an interface for the
-  suite of Emacs tools housed in the =Devel::PerlySense= perl package on CPAN.
+  suite of Emacs tools housed in the =Devel::PerlySense= perl package on
+  CPAN.
+
+** Prerequisites
+   To use =perly-sense-mode=, you need:
+
+   - The =Devel::PerlySense= CPAN package (you can have =perly-sense-mode= try
+     and install it for you, but this is experimental).
 
 ** Installation
    Right now the only way to install perly-sense-mode is to do so manually, but
@@ -27,3 +34,22 @@ git clone git@github.com:tjtrabue/perly-sense-mode.git
 #+begin_src emacs-lisp :tangle yes
 (add-to-list 'load-path "/path/to/perly-sense-mode")
 #+end_src
+
+** Starting perly-sense-mode automatically for perl-mode/cperl-mode
+   Add the following hooks to your Emacs configuration file:
+
+#+begin_src emacs-lisp :tangle yes
+(add-hook 'perl-mode #'perly-sense-mode)
+(add-hook 'cperl-mode #'perly-sense-mode)
+#+end_src
+
+** Motivation
+  =Devel::PerlySense= already contains all the Emacs Lisp code necessary to use
+  its features, which is very handy, but configuring your =~/.emacs= file to tap
+  into those functions has always been an awkward copy-and-paste procedure that
+  is prone to error. Not only that, but making sure that the Elisp code for
+  =PerlySense= only loads for =perl-mode= and =cperl-mode= requires further
+  customization. This minor mode fixes these issues by providing an interface
+  that handles all of the automatic loading/unloading for you. All you need to
+  do is add a hook for =perl-mode= and/or =cperl-mode= to start
+  =perly-sense-mode= automatically and you're golden!
