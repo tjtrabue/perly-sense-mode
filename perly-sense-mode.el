@@ -126,9 +126,16 @@
 ;;;###autoload
 (defun install-perly-sense ()
   "Install the Devel::PerlySense package from CPAN."
-  (when (not (executable-find "perly_sense"))
-    (message "Installing Devel::PerlySense from CPAN")
-    (shell-command "cpanm -i --force Devel::PerlySense")))
+  (let ((perly-sense-exec (executable-find "perly_sense"))
+        (cpanm-exec (executable-find "cpanm"))
+        (output-buf-name "*install-perly-sense*"))
+    (when (not perly-sense-exec)
+      (message "Installing Devel::PerlySense from CPAN")
+      (if (not cpanm-exec)
+          (error "No cpanm executable found on $PATH"))
+      (call-process cpanm-exec nil output-buf-name 'redisplay
+		    "-i" "--force" "Devel::PerlySense")
+      (pop-to-buffer output-buf-name))))
 
 ;;;###autoload
 (define-minor-mode perly-sense-mode

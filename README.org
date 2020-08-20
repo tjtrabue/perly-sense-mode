@@ -62,7 +62,7 @@ git clone git@github.com:tjtrabue/perly-sense-mode.git
 ;; Add major mode hooks:
 (add-hook 'perl-mode #'perly-sense-mode)
 (add-hook 'cperl-mode #'perly-sense-mode)
-;; If the perly_sense executable is not found on SPATH, try and install it:
+;; If the perly_sense executable is not found on $PATH, try and install it:
 (install-perly-sense)
 #+end_src
 
