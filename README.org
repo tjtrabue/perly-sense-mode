@@ -49,6 +49,26 @@ git clone git@github.com:tjtrabue/perly-sense-mode.git
 (add-hook 'cperl-mode #'perly-sense-mode)
 #+end_src
 
+** Use perly-sense-mode to install Devel::PerlySense from CPAN (EXPERIMENTAL)
+   Although it is recommended that you already have =Devel::PerlySense=
+   installed on your system before using =perly-sense-mode=, this plugin does
+   provide an autoloaded function called =install-perly-sense= that you can use
+   to try and install =Devel::PerlySense= from within Emacs. Here is an example
+   workflow using this feature:
+
+#+begin_src emacs-lisp :tangle yes
+;; Load perly-sense-mode:
+(require 'perly-sense-mode)
+;; Add major mode hooks:
+(add-hook 'perl-mode #'perly-sense-mode)
+(add-hook 'cperl-mode #'perly-sense-mode)
+;; If the perly_sense executable is not found on SPATH, try and install it:
+(install-perly-sense)
+#+end_src
+
+   Again, it is recommended that you install =Devel::PerlySense= manually using
+   =cpanm=, so use this feature at your own risk.
+
 ** Motivation
   =Devel::PerlySense= already contains all the Emacs Lisp code necessary to use
   its features, which is very handy, but configuring your =~/.emacs= file to tap
